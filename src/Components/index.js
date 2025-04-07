@@ -1,9 +1,9 @@
 import Header from "./Header/Header";
 import ItemListContainer from "./ItemList/ItemListContainer";
-import Counter from "./Counter/Counter"
+import CartWidget from "./CartWidget/CartWidget"
 
 export {
     Header,
     ItemListContainer,
-    Counter
+    CartWidget
 }

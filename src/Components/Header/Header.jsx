@@ -1,6 +1,6 @@
 import React from 'react'
 import { Navbar, Nav, Container } from 'react-bootstrap'
-import { Counter } from '../../Components';
+import { CartWidget } from '../../Components';
 
 const Header = () => {
   return <div>
@@ -12,7 +12,7 @@ const Header = () => {
           <Nav.Link href="#estilos">Estilos</Nav.Link>
           <Nav.Link href="#contacto">Contacto</Nav.Link>
         </Nav>
-          <Counter />
+          <CartWidget />
       </Container>
     </Navbar>
   </div>
