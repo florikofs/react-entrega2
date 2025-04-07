@@ -1,6 +1,6 @@
 import React from 'react'
 import { Navbar, Nav, Container } from 'react-bootstrap'
-import { Counter } from '../../Components';
+import { Counter } from 'Components';
 
 const Header = () => {
   return <div>
