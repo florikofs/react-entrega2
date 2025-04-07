@@ -1,6 +1,6 @@
 import React from 'react'
 import { Navbar, Nav, Container } from 'react-bootstrap'
-import { CartWidget } from '../../Components';
+import { CartWidget } from '../../Components/index.jsx';
 
 const Header = () => {
   return <div>

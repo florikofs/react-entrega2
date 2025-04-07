@@ -1,7 +1,7 @@
 
 // import './App.css'
-import { Header } from './Components';
-import { ItemListContainer } from './Components';
+import { Header } from './Components/index.jsx';
+import { ItemListContainer } from './Components/index.jsx';
 
 function App() {
   return (
