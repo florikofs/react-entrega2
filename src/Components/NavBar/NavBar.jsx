@@ -1,8 +1,8 @@
 import React from 'react'
 import { Navbar, Nav, Container } from 'react-bootstrap'
-import { CartWidget } from '../../Components/index.jsx';
+import { CartWidget } from '../index.js';
 
-const Header = () => {
+const NavBar = () => {
   return <div>
     <Navbar bg="dark" data-bs-theme="dark">
       <Container>
@@ -12,10 +12,10 @@ const Header = () => {
           <Nav.Link href="#estilos">Estilos</Nav.Link>
           <Nav.Link href="#contacto">Contacto</Nav.Link>
         </Nav>
-          <CartWidget />
+        <CartWidget />
       </Container>
     </Navbar>
   </div>
 }
 
-export default Header
+export default NavBar
