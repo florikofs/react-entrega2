@@ -1,22 +1,20 @@
-import ItemCard from './ItemCard'
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
+import { Row, Col } from 'react-bootstrap';
+import { ItemCard } from '../index.js';
 
 
 const ItemList = ({ products }) => {
 
-
     return (
-        <div>
-            <Container className="w-60 mx-auto text-center py-5 sm-6">
-                <Row className='mb-4'>
-                    <h1>Listado de productos</h1>
+        <Container className="d-flex justify-content-center">
+                <Row className="g-1 m-3">
+                    {products.map((e) =>
+                        <Col sm={3} key={e.id} className='text-center'>
+                            <ItemCard product={e} />
+                        </Col>
+                    )}
                 </Row>
-                <Row className="justify-content-start align-content-around">
-                    { products.map((e) => <ItemCard product={e} key={e.id} />) }
-                </Row>
-            </Container>
-        </div>
+        </Container>
     )
 }
 

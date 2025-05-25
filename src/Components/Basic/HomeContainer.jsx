@@ -1,17 +1,9 @@
-import React from 'react'
-import { useState } from 'react';
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { Row, Col } from 'react-bootstrap';
 import tienda from '../../assets/tienda.jpg';
-import { ButtonMain, DinamicText } from '../../Components';
 
-const ContainerHome = ({ greeting }) => {
-  const [view, setView] = useState(true);
 
-  const handleView = () => {
-    setView(!view);
-  }
+const HomeContainer = ({ greeting }) => {
 
   return (
     <div>
@@ -28,8 +20,11 @@ const ContainerHome = ({ greeting }) => {
           </Col>
         </Row>
       </Container>
+      <Row className='mt-5 mb-0 text-center'>
+          <h2>Listado de productos</h2>
+        </Row>
     </div>
   )
 }
 
-export default ContainerHome
+export default HomeContainer

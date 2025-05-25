@@ -4,25 +4,35 @@ import NavBar from "./Header/NavBar.jsx";
 import CartWidget from "./Header/CartWidget.jsx";
 
 //ITEM LIST
-import ItemListContainer from "../Pages/ItemListContainer.jsx";
-import ItemList from "./ItemList/ItemList.jsx";
 import ItemCard from "./ItemList/ItemCard.jsx";
+import ItemDetail from "./ItemList/ItemDetail.jsx";
+import ItemDetailContainer from "./ItemList/ItemDetailContainer.jsx";
+import ItemList from "./ItemList/ItemList.jsx";
+import ItemListContainer from "./ItemList/ItemListContainer.jsx";
 
-//BASIC
-import ContainerHome from "./Basic/ContainerHome.jsx";
+//CART
+import ItemCart from "./ItemList/ItemCart.jsx";
+
+//BASIC-GENERAL
+import Counter from "./ItemList/Counter.jsx";
+import HomeContainer from "./Basic/HomeContainer.jsx";
 import ButtonMain from "./Basic/Button/Button.jsx";
-
-//PRUEBAS-EJERCICIOS
-import DinamicText from "../Ejercicios/DinamicText.jsx";
+import Loader from "./Basic/Loader/Loader.jsx"
+import ErrorCard from "./Basic/Error/ErrorCard.jsx"
 
 
 export {
     NavBar,
     CartWidget,
     ItemListContainer,
+    ItemDetailContainer,
     ItemList,
     ItemCard,
-    ContainerHome,
+    ItemDetail,
+    Counter,
+    ItemCart,
+    HomeContainer,
     ButtonMain,
-    DinamicText
+    Loader,
+    ErrorCard
 }

@@ -1,12 +1,11 @@
-import { useState } from 'react';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Badge from 'react-bootstrap/Badge';
+import { Row, Col, Badge } from 'react-bootstrap';
 import { Link } from 'react-router';
+import { useCartContext } from '../../context/ContextProvider';
+
 
 const CartWidget = () => {
 
-    const [number, SetNumber] = useState(0);
+    const { itemsQuantity } = useCartContext()
 
     return (
         <div>
@@ -14,7 +13,7 @@ const CartWidget = () => {
                 <Col>
                     <Link to="/cart">
                         <i className="fa-solid fa-cart-shopping text-white p-1"></i>
-                        <Badge bg="secondary">{number}</Badge>
+                        <Badge bg="secondary">{itemsQuantity}</Badge>
                     </Link>
                 </Col>
             </Row>
