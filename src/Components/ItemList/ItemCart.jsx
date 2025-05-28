@@ -1,7 +1,5 @@
 
 import { Row, Col } from 'react-bootstrap';
-import { Link } from 'react-router';
-import { ButtonMain } from '../index';
 
 const ItemCart = ({ item }) => {
 
@@ -21,6 +19,5 @@ const ItemCart = ({ item }) => {
         </>
     )
 }
-
 
 export default ItemCart
