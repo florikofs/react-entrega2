@@ -12,6 +12,7 @@ const Checkout = () => {
   const [user, setUser] = useState({
     name: '',
     email: '',
+    emailConfirm: '',
     tel: '',
   })
 
@@ -33,7 +34,7 @@ const Checkout = () => {
         if (!validateTel(user.tel)) {
           alert("No se pudo finalizar la compra porque el campo Teléfono no respeta el formato indicado.")
         } else {
-          
+
           const newOrder = {
             buyer: user,
             items: cart,
@@ -100,6 +101,21 @@ const Checkout = () => {
                         <Form.Text className="text-muted">
                           Ej: tumail@mail.com
                         </Form.Text>
+                      </Form.Group>
+
+                      <Form.Group className="mb-4">
+                        <Form.Label>Confirmar email *</Form.Label>
+                        <Form.Control
+                          name="emailConfirm"
+                          type="email"
+                          value={user.emailConfirm}
+                          onChange={handleChange}
+                        />
+                        {user.email !== user.emailConfirm && (
+                          <Form.Text className="text-danger">
+                            Tiene que coincidir con el email que ingresaste anteriormente.
+                          </Form.Text>
+                        )}
                       </Form.Group>
 
                       <Form.Group className="mb-4">

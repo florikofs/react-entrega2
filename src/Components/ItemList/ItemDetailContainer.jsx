@@ -20,7 +20,7 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     getProductsById(id)
       .then((res) => {
-        if (!res.id) {
+        if (!res || !res.id) {
           setError('ItemNotFound');
         } else {
           setItem(res);
@@ -40,7 +40,7 @@ const ItemDetailContainer = () => {
   const [amount, SetAmount] = useState(1);
 
   const handleAdd = () => {
-    amount < item.stock && SetAmount(amount + 1);
+    item && amount < item.stock && SetAmount(amount + 1);
   }
 
   const handleSubtract = () => {
@@ -49,19 +49,17 @@ const ItemDetailContainer = () => {
 
   const handleAddItem = () => {
     const existing = cart.find(prod => prod.id === item.id);
-    
+
     if (existing) {
-    setCart(cart.map(prod =>
-      prod.id === item.id
-        ? { ...prod, quantity: prod.quantity + amount }
-        : prod
-    ))
-    SetAmount(1);
+      setCart(cart.map(prod =>
+        prod.id === item.id
+          ? { ...prod, quantity: prod.quantity + amount }
+          : prod
+      ))
     } else {
-    setCart([...cart, { ...item, quantity: amount }])
-    SetAmount(1);
-  }
-};
+      setCart([...cart, { ...item, quantity: amount }])
+    }
+  };
 
 
   //COMPONENTES
@@ -83,7 +81,7 @@ const ItemDetailContainer = () => {
         as={Link}
         to="/"
         label="Ver listado de productos"
-      /> */
+      />
     </Row>
   ) :
     <div className='m-5'>

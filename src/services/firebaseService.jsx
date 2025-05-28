@@ -23,9 +23,13 @@ export const getProductsById = async (id) => {
 
     const item = await getDoc(prodDoc)
 
-    return {
-        id: item.id,
-        ...item.data()
+    if (!item.exists()) {
+        return null; // Producto no encontrado
+    } else {
+        return {
+            id: item.id,
+            ...item.data()
+        }
     }
 };
 

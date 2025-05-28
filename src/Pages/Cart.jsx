@@ -13,14 +13,10 @@ function Cart() {
       </Row>
       {cart.length == 0 ? (
         <>
-          <Row>
-            <Col className="col-1">
-              <i className="fa-solid fa-warning"></i>
-            </Col>
-            <Col>
-              <h4>Debés seleccionar un ítem del listado de productos.</h4>
-            </Col>
-          </Row>
+          <div className="d-flex align-items-center mb-3">
+            <i className="fa-solid fa-warning me-2"></i>
+            <h4 className="mb-0">Debés seleccionar un ítem del listado de productos.</h4>
+          </div>
           <Row className='mt-3'>
             <ButtonMain as={Link} to={"/"} label="Ver listado" />
           </Row>

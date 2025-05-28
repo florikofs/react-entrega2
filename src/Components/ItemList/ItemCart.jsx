@@ -13,7 +13,7 @@ const ItemCart = ({ item }) => {
                     <h4>{item.name}</h4>
                     <h5>${item.price}</h5>
                     <h5>Cantidad: {item.quantity}</h5>
-                    <h5>Subtotal: ${item.quantity * item.price.toFixed(2)}</h5>
+                    <h5>Subtotal: ${(item.quantity * item.price).toFixed(2)}</h5>
                 </Col>
             </Row>
         </>
