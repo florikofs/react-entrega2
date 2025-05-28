@@ -1,10 +1,10 @@
 
 import './App.css'
 import { Routes, Route } from 'react-router';
-import About  from './pages/About';
-import Cart  from './pages/Cart';
-import Checkout from './pages/Checkout';
-import Error404 from './pages/Error404';
+import About  from './Pages/About';
+import Cart  from './Pages/Cart';
+import Checkout from './Pages/Checkout';
+import Error404 from './Pages/Error404';
 import { ItemListContainer, ItemDetailContainer, NavBar } from './Components/index';
 
 function App() {

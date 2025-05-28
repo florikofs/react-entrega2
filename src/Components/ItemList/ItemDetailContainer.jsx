@@ -55,7 +55,8 @@ const ItemDetailContainer = () => {
       prod.id === item.id
         ? { ...prod, quantity: prod.quantity + amount }
         : prod
-    ));
+    ))
+    SetAmount(1);
     } else {
     setCart([...cart, { ...item, quantity: amount }])
     SetAmount(1);
