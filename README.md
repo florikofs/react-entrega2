@@ -4,7 +4,7 @@ Es una tienda online de decoración de interiores, desarrollada con **React** + 
 Fue realizado con fines educativos.
 
 Se puede acceder al proyecto desde este enlace: 
-[https://tu-nombre.vercel.app](https://tu-nombre.vercel.app)
+[https://react-entregafinal.vercel.app/](https://react-entregafinal.vercel.app/)
 
 <br>
 
@@ -58,26 +58,21 @@ Se puede acceder al proyecto desde este enlace:
 
 ## Instalación
 
-1. Cloná el repositorio:
-   ```bash
-   git clone https://github.com/tu-usuario/tu-repo.git
-   cd tu-repo
-
 <br>
 
-2. Instalá las versiones de software indicadas:
+1. Instalá las versiones de software indicadas:
    - Node >= 18.0.0
    - Vite >= 3.1.4
 
 <br>
 
-3. Instalá las dependencias:
+2. Instalá las dependencias:
    ```
     npm install
 
 <br>
 
-4. Configurá el archivo .env:
+3. Configurá el archivo .env:
    ```
    VITE_FIREBASE_API_KEY
    VITE_FIREBASE_AUTH_DOMAIN
@@ -89,7 +84,7 @@ Se puede acceder al proyecto desde este enlace:
 
 <br>
 
-5. Iniciá el proyecto en modo desarrollo:
+4. Iniciá el proyecto en modo desarrollo:
    ```
     npm run dev
 
