@@ -1,7 +1,6 @@
 import { useParams, Link } from 'react-router';
 import { useState, useEffect } from 'react';
 import { Row, Col } from 'react-bootstrap';
-import { loadProducts } from '../../helpers/loadProducts';
 import { ErrorCard, ItemDetail, Loader, Counter, ButtonMain } from '../index';
 import { useCartContext } from '../../context/ContextProvider';
 import { getProductsById } from '../../services/firebaseService.jsx';
@@ -42,20 +41,26 @@ const ItemDetailContainer = () => {
 
   const handleAdd = () => {
     amount < item.stock && SetAmount(amount + 1);
-    console.log(amount);
-    console.log("Stock:", item.stock);
   }
 
   const handleSubtract = () => {
     amount > 1 && SetAmount(amount - 1);
-    console.log(amount);
-    console.log("Stock:", item.stock);
   }
 
   const handleAddItem = () => {
-    item.quantity = amount
-    setCart([...cart, item])
+    const existing = cart.find(prod => prod.id === item.id);
+    
+    if (existing) {
+    setCart(cart.map(prod =>
+      prod.id === item.id
+        ? { ...prod, quantity: prod.quantity + amount }
+        : prod
+    ));
+    } else {
+    setCart([...cart, { ...item, quantity: amount }])
+    SetAmount(1);
   }
+};
 
 
   //COMPONENTES
@@ -74,8 +79,9 @@ const ItemDetailContainer = () => {
       <ErrorCard
         title={`Falló la carga del producto`}
         description="Por favor, volvé intertarlo más tarde."
-        onClick={loadProducts}
-        label="Volver a intentar"
+        as={Link}
+        to="/"
+        label="Ver listado de productos"
       /> */
     </Row>
   ) :

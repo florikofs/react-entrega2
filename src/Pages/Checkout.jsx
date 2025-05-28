@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router';
 import { Row, Col, Form } from 'react-bootstrap'
 import { useCartContext } from '../context/ContextProvider';
 import { validateEmail, validateName, validateTel } from '../helpers/validations'
@@ -6,7 +7,8 @@ import { ButtonMain, ItemCart } from '../Components';
 import { createOrder } from '../services/firebaseService';
 
 const Checkout = () => {
-  const { cart, total } = useCartContext()
+  const { cart, total, setCart } = useCartContext()
+  const navigate = useNavigate()
   const [user, setUser] = useState({
     name: '',
     email: '',
@@ -31,7 +33,6 @@ const Checkout = () => {
         if (!validateTel(user.tel)) {
           alert("No se pudo finalizar la compra porque el campo Teléfono no respeta el formato indicado.")
         } else {
-          alert("Compra finalizada con éxito.")
           
           const newOrder = {
             buyer: user,
@@ -39,7 +40,9 @@ const Checkout = () => {
             total: total
           }
           const orderCreated = await createOrder(newOrder)
-          console.log(orderCreated)
+          alert('Gracias por tu compra. Tu n° de compra es: ' + orderCreated.id)
+          setCart([])
+          navigate('/')
         }
       }
     }

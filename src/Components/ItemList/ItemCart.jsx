@@ -16,7 +16,6 @@ const ItemCart = ({ item }) => {
                     <h5>${item.price}</h5>
                     <h5>Cantidad: {item.quantity}</h5>
                     <h5>Subtotal: ${item.quantity * item.price}</h5>
-                    <ButtonMain as={Link} to={"/"} variant="link" label="Eliminar producto" />
                 </Col>
             </Row>
         </>

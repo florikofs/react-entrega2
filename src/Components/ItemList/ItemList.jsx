@@ -6,10 +6,10 @@ import { ItemCard } from '../index.js';
 const ItemList = ({ products }) => {
 
     return (
-        <Container className="d-flex justify-content-center">
-                <Row className="g-1 m-3">
+        <Container>
+                <Row className="m-3 justify-content-center">
                     {products.map((e) =>
-                        <Col sm={3} key={e.id} className='text-center'>
+                        <Col xs={12} sm={6} md={4} lg={3} key={e.id} className="mb-4 d-flex justify-content-center">
                             <ItemCard product={e} />
                         </Col>
                     )}

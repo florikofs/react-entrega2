@@ -1,16 +1,21 @@
-import { collection, doc, getDocs, getDoc, addDoc } from "firebase/firestore"
+import { collection, doc, getDocs, getDoc, addDoc, query, where } from "firebase/firestore"
 import { db } from "../config/firebaseConfig"
 
-//Traer listado de productos
-export const getProducts = async () => {
+//Traer listado de productos + filtro category
+export const getProducts = async (category) => {
     const prodCollection = collection(db, "Products")
-    const products = await getDocs(prodCollection)
 
-    return products.docs.map(item => ({
-        id: item.id,
-        ...item.data(),
+    const q = category
+        ? query(prodCollection, where("category", "==", category))
+        : prodCollection;
+
+    const snapshot = await getDocs(q);
+
+    return snapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
     }))
-}
+};
 
 //Traer producto
 export const getProductsById = async (id) => {
@@ -22,15 +27,12 @@ export const getProductsById = async (id) => {
         id: item.id,
         ...item.data()
     }
-}
+};
 
 //Crear orden
 export const createOrder = async (newOrder) => {
-    const orderCollection = collection(db, "Order")
+    const orderCollection = collection(db, "Orders")
     const orderCreatedRes = await addDoc(orderCollection, newOrder)
-    console.log("Resp servicio Firebase", orderCreatedRes)
     return orderCreatedRes
-}
-
-//Filtrar por categoría
+};
 

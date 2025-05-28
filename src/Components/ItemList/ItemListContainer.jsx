@@ -10,16 +10,15 @@ const ItemListContainer = () => {
   const { category } = useParams();
 
   useEffect(() => {
-    getProducts()
+    getProducts(category)
     .then((res) => {
       setProducts(res);
     }).catch(error => {
       console.log(error)
     })
-  }, [])
+  }, [category])
   
-  const filterList = category ? products.filter((e) => e.category.includes(category)) : products
-  
+  // const filterList = category ? products.filter((e) => e.category.includes(category)) : products
   const location = useLocation();
 
   return (
@@ -27,7 +26,7 @@ const ItemListContainer = () => {
       {location.pathname === "/" &&
         <HomeContainer greeting="¡Te damos la bienvenida a nuestra tienda!" />
       }
-      <ItemList products={filterList} />
+      <ItemList products={products} />
     </>
   )
 }
