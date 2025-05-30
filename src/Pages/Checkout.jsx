@@ -65,7 +65,7 @@ const Checkout = () => {
               </Row>
             ))}
             <Row>
-              <h3>Total de la compra: ${total}</h3>
+              <h3>Total de la compra: ${total.toFixed(2)}</h3>
             </Row>
           </Row>
           <Row>
